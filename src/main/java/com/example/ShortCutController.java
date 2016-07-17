@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ShortCutController {
 
-    @GetMapping("/")
+    @GetMapping("/shortcut")
     String index() {
-        return "index";
+        return "shortcut";
     }
 
     @PostMapping("/shortcut")
@@ -18,5 +18,6 @@ public class ShortCutController {
         System.out.println(url);
         return "result";
     }
+
 
 }
