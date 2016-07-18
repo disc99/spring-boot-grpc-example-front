@@ -20,9 +20,9 @@ public class ShortCutController {
         return "result";
     }
 
-    @GetMapping("/short/{shorturl}")
-    String redirect(@PathVariable String shorturl) {
-        System.out.println(shorturl);
+    @GetMapping("/s/{url}")
+    String redirect(@PathVariable String url) {
+        System.out.println(url);
         return "redirect:https://google.com";
     }
 }
