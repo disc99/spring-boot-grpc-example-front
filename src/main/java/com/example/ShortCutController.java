@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @AllArgsConstructor
 public class ShortCutController {
 
-    ShortCutServiceClient client;
+    private ShortCutServiceClient client;
 
     @GetMapping("/shortcut")
     String index() {
@@ -20,14 +20,12 @@ public class ShortCutController {
 
     @PostMapping("/shortcut")
     String shortcut(@RequestParam String url) {
-        System.out.println(url);
-        return "result";
+        return client.shortcut(url);
     }
 
     @GetMapping("/s/{url}")
     String redirect(@PathVariable String url) {
-        System.out.println(url);
-        return "redirect:https://google.com";
+        return "redirect:" + client.parse(url);
     }
 }
 
