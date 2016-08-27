@@ -16,7 +16,7 @@ public class SpringBootGrpcExampleFrontApplication {
 
 	@Bean
 	UrlServiceGrpc.UrlServiceBlockingStub urlServiceBlockingStub() {
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5656)
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 6565)
 				.usePlaintext(true)
 				.build();
 		return UrlServiceGrpc.newBlockingStub(channel);
